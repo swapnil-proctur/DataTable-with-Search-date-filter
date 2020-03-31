@@ -8,7 +8,7 @@ Execute following commands to run this application.
 $ git clone https://github.com/swapnil-proctur/DataTable-with-Search-date-filter.git
 $ cd DataTable-with-Search-date-filter
 $ npm install
-$ ionic serve
+$ ng serve -o
 
 ```
 
