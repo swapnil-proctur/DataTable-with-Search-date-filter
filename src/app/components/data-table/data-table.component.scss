@@ -1,5 +1,6 @@
 .outer-container{
   padding: 1%;
+  color: #fff;
 }
 h2{
   text-align: center;
@@ -9,12 +10,42 @@ h2{
   display: flex;
   flex-direction: row;
   width: 100%;
+  background: rgba(0, 0, 0, 0.18);
+  background-size: cover;
+  padding: 1em;
   .search-filter-container{
     width: 30%;
+    .search-box{
+      margin-top: 8px;
+    }
   }
   .date-range-filter-container{
     display: flex;
     flex-direction: row;
+    width: 70%;
+    .date-item{
+      display: flex;
+      flex-direction: row;
+      width: 25%;
+      margin-top: 8px;
+      label{
+        margin-top: 5px;
+        margin-right: 10px;
+      }
+    }
+    .submit-btn {
+      font-size: .9em;
+      color: #fff;
+      background: #76b852;
+      outline: none;
+      border: 1px solid #76b852;
+      cursor: pointer;
+      padding: 0.9em;
+      -webkit-appearance: none;
+      width: 150px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -22,21 +53,25 @@ h2{
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+
   .table-header-container{
     display: flex;
     flex-direction: row;
     border: 1px solid #ccc;
+    background: rgba(0, 0, 0, 0.18);
     .table-header-item{
       width: 8.33%;
       max-width: 8.33%;
       min-width: 8.33%;
-      // padding: 10px;
+      padding: 10px;
       text-align: left;
     }
   }
   .table-value-outer-container{
     display: flex;
     flex-direction: column;
+    max-height: 65vh;
+    overflow-y: auto;
     .value-container{
       display: flex;
       flex-direction: row;
@@ -44,7 +79,7 @@ h2{
         width: 8.33%;
         max-width: 8.33%;
         min-width: 8.33%;
-        // padding: 10px;
+        padding: 10px;
         text-align: left;
         border: 1px solid #ccc;
       }
@@ -52,9 +87,14 @@ h2{
   }
 }
 
+.form-group {
+  margin-bottom: 0;
+}
+
 
 .footer-section{
   position: fixed;
   bottom: 10px;
   width: 98%;
+
 }

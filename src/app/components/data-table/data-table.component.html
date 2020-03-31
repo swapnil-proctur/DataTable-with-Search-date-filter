@@ -5,26 +5,26 @@
   <div class="filter-container">
     <div class="search-filter-container">
       <input type="text" value="" id="search_bar" [(ngModel)]="searchInput" name=""
-       (keyup)="searchDatabase()" placeholder="Search here..." class="search-box form-control">
+       (keyup)="searchDatabase()" placeholder="Search here..." class="text search-box form-control">
 
     </div>
     <div class="date-range-filter-container">
       <div class="date-item form-group">
         <label for="from-date">From Date</label>
-        <input type="text" id="from-date" placeholder="From Date" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true }" [(ngModel)]="fromDate">
+        <input type="text" id="from-date" placeholder="From Date" class="text form-control" bsDatepicker [bsConfig]="{ isAnimated: true }" [(ngModel)]="fromDate">
       </div>
       <div class="date-item form-group">
         <label for="to-date">To Date</label>
-        <input type="text" id="to-date"  placeholder="To Date" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true }" [(ngModel)]="toDate">
+        <input type="text" id="to-date"  placeholder="To Date" class="text form-control" bsDatepicker [bsConfig]="{ isAnimated: true }" [(ngModel)]="toDate">
       </div>
-      <button type="button" name="button" (click)="filterUsingDate()">Apply Dates</button>
+      <button type="button" name="button" class="submit-btn"(click)="filterUsingDate()">Apply Dates</button>
     </div>
   </div>
 
   <div class="table-container">
     <div class="table-header-container">
       <div class="table-header-item" *ngFor="let head of headers">
-        <span>{{head.headerName}}</span>
+        <span title="{{head.headerName}}">{{ (head.headerName.length > 10) ? (head.headerName | slice:0:10) + '...' : head.headerName }}</span>
       </div>
     </div>
     <div class="table-value-outer-container">
@@ -42,7 +42,7 @@
           <span>{{val.maker}}</span>
         </div>
         <div class="value-item">
-          <span>{{val.approvalStatus}}</span>
+          <span title="{{val.approvalStatus}}">{{ (val.approvalStatus.length > 10) ? (val.approvalStatus | slice:0:10) + '...' : val.approvalStatus }}</span>
         </div>
         <div class="value-item">
           <span>{{val.comments}}</span>
@@ -51,7 +51,7 @@
           <span>{{val.userStatus}}</span>
         </div>
         <div class="value-item">
-          <span>{{val.fullName}}</span>
+          <span title="{{val.fullName}}">{{ (val.fullName.length > 10) ? (val.fullName | slice:0:10) + '...' : val.fullName }}</span>
         </div>
         <div class="value-item">
           <span>{{val.dateTimeCreated * 1000  | date: 'dd/MM/yyyy'}}</span>

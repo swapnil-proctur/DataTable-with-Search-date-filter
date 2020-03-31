@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Execute following commands to run this application.
 
 ```
-$ git clone https://github.com/nishantll/procturAdminAPPv2.git
+$ git clone https://github.com/swapnil-proctur/DataTable-with-Search-date-filter.git
 $ cd DataTable-with-Search-date-filter
 $ npm install
 $ ionic serve
