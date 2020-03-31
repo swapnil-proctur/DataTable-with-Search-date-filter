@@ -1,0 +1,81 @@
+<div class="outer-container">
+
+  <h2>Data Table</h2>
+
+  <div class="filter-container">
+    <div class="search-filter-container">
+      <input type="text" value="" id="search_bar" [(ngModel)]="searchInput" name=""
+       (keyup)="searchDatabase()" placeholder="Search here..." class="search-box form-control">
+
+    </div>
+    <div class="date-range-filter-container">
+      <div class="date-item form-group">
+        <label for="from-date">From Date</label>
+        <input type="text" id="from-date" placeholder="From Date" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true }" [(ngModel)]="fromDate">
+      </div>
+      <div class="date-item form-group">
+        <label for="to-date">To Date</label>
+        <input type="text" id="to-date"  placeholder="To Date" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true }" [(ngModel)]="toDate">
+      </div>
+      <button type="button" name="button" (click)="filterUsingDate()">Apply Dates</button>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <div class="table-header-container">
+      <div class="table-header-item" *ngFor="let head of headers">
+        <span>{{head.headerName}}</span>
+      </div>
+    </div>
+    <div class="table-value-outer-container">
+      <div class="value-container" *ngFor="let val of dataValues">
+        <div class="value-item">
+          <span>{{val.username}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.mobile}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.twoFactorStatus}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.maker}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.approvalStatus}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.comments}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.userStatus}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.fullName}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.dateTimeCreated * 1000  | date: 'dd/MM/yyyy'}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.dateTimeModified * 1000 | date: 'dd/MM/yyyy'}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.checkersComments}}</span>
+        </div>
+        <div class="value-item">
+          <span>{{val.actionType}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<section class="footer-section">
+  <pagination (goPage)="fectchTableDataByPage($event)" (goNext)="fetchNext()" (goPrev)="fetchPrevious()" [pagesToShow]="5"
+    [page]="pageIndex" [perPage]="displayBatchSize" (sizeChange)="updateTableBatchSize($event)"
+    [count]="totalCount">
+  </pagination>
+</section>
+
+
+</div>

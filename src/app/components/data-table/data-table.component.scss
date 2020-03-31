@@ -1,0 +1,60 @@
+.outer-container{
+  padding: 1%;
+}
+h2{
+  text-align: center;
+}
+
+.filter-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  .search-filter-container{
+    width: 30%;
+  }
+  .date-range-filter-container{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.table-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  .table-header-container{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    .table-header-item{
+      width: 8.33%;
+      max-width: 8.33%;
+      min-width: 8.33%;
+      // padding: 10px;
+      text-align: left;
+    }
+  }
+  .table-value-outer-container{
+    display: flex;
+    flex-direction: column;
+    .value-container{
+      display: flex;
+      flex-direction: row;
+      .value-item{
+        width: 8.33%;
+        max-width: 8.33%;
+        min-width: 8.33%;
+        // padding: 10px;
+        text-align: left;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+}
+
+
+.footer-section{
+  position: fixed;
+  bottom: 10px;
+  width: 98%;
+}
